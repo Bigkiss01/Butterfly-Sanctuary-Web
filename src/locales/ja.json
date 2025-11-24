@@ -1,0 +1,89 @@
+{
+  "language": {
+    "label": "言語"
+  },
+  "sound": {
+    "on": "サウンドON",
+    "off": "サウンドOFF"
+  },
+  "welcome": {
+    "title": "ようこそ",
+    "sanctuary": "Merlin Butterfly Sanctuary",
+    "hotel": "プーケット・マリオット・リゾート＆スパ",
+    "experience": "★★★★★ 五つ星の感動",
+    "intro1": "自然・保全・ラグジュアリーが融合した特別な世界へ。",
+    "intro2": "Merlin Butterfly Sanctuary は IUCN と連携し、タイの貴重な蝶を守る“生きたラボ”です。",
+    "begin": "夢の旅をはじめる",
+    "askName": "✨ お名前を教えていただけますか？"
+  },
+  "stats": {
+    "species": "在来種",
+    "partner": "パートナー",
+    "days": "年間営業日",
+    "iucn": "IUCN"
+  },
+  "buttons": {
+    "exploreMore": "さらに見る",
+    "startOver": "最初から",
+    "rateExperience": "体験を評価"
+  },
+  "sanctuary": {
+    "greeting": "{{name}} さん、ようこそ！👋",
+    "subtitle": "世界に一つだけの蝶体験があなたを待っています",
+    "about": {
+      "title": "Merlin Butterfly Sanctuary について",
+      "badge": "IUCN パートナーシップ",
+      "body1": "私たちは IUCN（国際自然保護連合）と協力し、リゾート内でバランスの取れた生態系を育みながら、減少する在来蝶の保護に取り組んでいます。",
+      "body2": "飼育施設ではなく、幼虫の食草と蜜源植物を育て、蝶が庭全体を自由に飛び交える環境づくりを目指しています。",
+      "highlightsTitle": "🦋 保存活動ハイライト",
+      "highlights": [
+        "• 30種以上の在来蝶を繁殖・放蝶",
+        "• 卵から成虫までライフサイクルを観察",
+        "• ゴールデン・バードウィングなど希少種の繁殖プログラム",
+        "• 在来植物を用いた自然生息地の再生",
+        "• ゲストと地域社会への教育プログラム"
+      ]
+    },
+    "speciesHeading": "🦋 30種以上の蝶たちをご紹介 🦋",
+    "speciesIntro": "気品あるゴールデン・バードウィングから俊敏なテイルド・ジェイまで、当園で生き生きと舞う蝶の魅力を発見してください。",
+    "bestViewing": "おすすめの観察時間：{{time}}",
+    "exploreDetails": "詳細を見る",
+    "modal": {
+      "rarityLabel": "レア度 {{rarity}}",
+      "description": "説明",
+      "galleryTitle": "ガーデンギャラリー",
+      "gallerySubtitle": "実際の写真は近日公開",
+      "placeholderTitle": "写真準備中",
+      "placeholderSubtitle": "Merlin Sanctuary の {{name}}",
+      "habitat": "生息地",
+      "wingspan": "翼開長",
+      "lifespan": "寿命",
+      "bestTime": "ベストタイム",
+      "funFactTitle": "{{name}} さんへの豆知識！",
+      "defaultGuest": "ゲスト"
+    }
+  },
+  "feedback": {
+    "title": "ありがとうございます、{{name}} さん!",
+    "subtitle": "魔法のような時間を楽しんでいただけましたか？🦋✨",
+    "prompt2": "より良い体験づくりのために評価をお聞かせください",
+    "ask": "Merlin Butterfly Sanctuary の体験はいかがでしたか？",
+    "rating": [
+      "もっと頑張ります 🤔",
+      "まあまあでした 😊",
+      "良かったです！ 👍",
+      "最高でした！ 🌟",
+      "感動しました！ ⭐"
+    ],
+    "thanksCardTitle": "ご意見ありがとうございます！",
+    "thanksCardBody": "皆さまの声が、さらに魔法のような体験を生み出します。またお会いできる日を楽しみにしています！🦋",
+    "commentLabel": "よろしければ感想をどうぞ（任意）",
+    "commentPlaceholder": "お気に入りの瞬間や改善アイデアを教えてください...",
+    "optionalHint": "任意入力ですが、より良いサンクチュアリづくりに役立ちます",
+    "submit": "フィードバックを送信",
+    "submitting": "送信中...",
+    "successMessage": "ありがとうございます！フィードバックを保存しました。",
+    "errorMessage": "エラーが発生しました。少し待ってからもう一度お試しください。",
+    "ratingRequired": "送信前に星評価を選んでください"
+  }
+}

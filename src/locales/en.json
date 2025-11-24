@@ -1,0 +1,251 @@
+{
+  "language": {
+    "label": "Language"
+  },
+  "sound": {
+    "on": "Sound On",
+    "off": "Sound Off"
+  },
+  "welcome": {
+    "title": "Welcome to",
+    "sanctuary": "Merlin Butterfly Sanctuary",
+    "hotel": "Phuket Marriott Resort & Spa",
+    "experience": "★★★★★ Five-Star Experience",
+    "intro1": "Step into an extraordinary world where nature, conservation, and luxury meet.",
+    "intro2": "The Merlin Butterfly Sanctuary isn't just a beautiful attraction - it's a living laboratory dedicated to protecting Thailand's precious butterfly heritage through our partnership with IUCN.",
+    "begin": "Begin Your Enchanted Journey",
+    "askName": "✨ May we have your name, dear guest?"
+  },
+  "stats": {
+    "species": "Native Species",
+    "partner": "Partnership",
+    "days": "Days Open",
+    "iucn": "IUCN"
+  },
+  "buttons": {
+    "exploreMore": "Explore More",
+    "startOver": "Start Over",
+    "rateExperience": "Rate Experience"
+  },
+  "sanctuary": {
+    "greeting": "Welcome, {{name}}! 👋",
+    "subtitle": "Your exclusive butterfly experience awaits",
+    "about": {
+      "title": "About Merlin Butterfly Sanctuary",
+      "badge": "IUCN Partnership",
+      "body1": "More than just a beautiful garden, the Merlin Butterfly Sanctuary is a world-class conservation project developed in partnership with IUCN (International Union for Conservation of Nature). Our mission is to protect and restore declining local butterfly populations while creating a balanced ecosystem within the resort grounds.",
+      "body2": "We're not just about enclosures - our philosophy centers on cultivating host plants for caterpillars and nectar-rich flowers that naturally attract and nurture butterflies, allowing them to fly freely throughout our gardens.",
+      "highlightsTitle": "🦋 Conservation Highlights:",
+      "highlights": [
+        "• 30+ native butterfly species bred and released",
+        "• Complete life cycle observation from egg to adult",
+        "• Breeding program featuring Golden Birdwing and other rare species",
+        "• Natural habitat restoration using indigenous plants",
+        "• Educational programs for guests and local communities"
+      ]
+    },
+    "speciesHeading": "🦋 Meet Our 30+ Butterfly Species 🦋",
+    "speciesIntro": "From the majestic Golden Birdwing to the speedy Tailed Jay, discover the incredible diversity of butterflies thriving in our sanctuary. Here are some stars of our collection:",
+    "bestViewing": "Best viewing: {{time}}",
+    "exploreDetails": "Explore Details",
+    "modal": {
+      "rarityLabel": "{{rarity}} Rarity",
+      "description": "Description",
+      "galleryTitle": "Garden Gallery",
+      "gallerySubtitle": "Real sanctuary photos coming soon",
+      "placeholderTitle": "Photo coming soon",
+      "placeholderSubtitle": "{{name}} at Merlin Sanctuary",
+      "habitat": "Habitat",
+      "wingspan": "Wingspan",
+      "lifespan": "Lifespan",
+      "bestTime": "Best Time",
+      "funFactTitle": "Fun Fact, {{name}}!",
+      "defaultGuest": "friend"
+    }
+  },
+  "feedback": {
+    "title": "Thank You, {{name}}!",
+    "subtitle": "We hope you enjoyed your magical experience! 🦋✨",
+    "ask": "How was your experience at the Merlin Butterfly Sanctuary?",
+    "prompt2": "Please rate your visit to help us improve",
+    "rating": [
+      "We'll do better! 🤔",
+      "Fair 😊",
+      "Good! 👍",
+      "Excellent! 🌟",
+      "Outstanding! ⭐"
+    ],
+    "thanksCardTitle": "Thank you for your feedback!",
+    "thanksCardBody": "Your opinion helps us create an even more magical experience. We look forward to welcoming you back soon! 🦋",
+    "commentLabel": "Care to share more? (optional)",
+    "commentPlaceholder": "Tell us about your favorite moment, or ideas to improve...",
+    "optionalHint": "Optional, but it helps us craft an even better sanctuary.",
+    "submit": "Send feedback",
+    "submitting": "Sending...",
+    "successMessage": "Thank you! Your feedback has been saved.",
+    "errorMessage": "Something went wrong. Please try again in a moment.",
+    "ratingRequired": "Please tap a star rating before sending."
+  },
+  "butterflies": {
+    "commonBirdwing": {
+      "name": "Common Birdwing",
+      "scientificName": "Troides helena",
+      "description": "The star of our sanctuary! This magnificent golden beauty is the largest butterfly here, featuring spectacular golden-yellow hindwings contrasted against velvety black.",
+      "habitat": "Tropical rainforests and flowering gardens",
+      "wingspan": "14-19 cm",
+      "lifespan": "3-4 weeks",
+      "funFact": "Protected species under CITES - one of the most sought-after butterflies by collectors worldwide.",
+      "bestTime": "Early morning (7-10 AM)",
+      "images": [
+        {
+          "alt": "Common Birdwing gliding above orchids inside Merlin Sanctuary",
+          "caption": "Gliding above orchids"
+        },
+        {
+          "alt": "Close-up of Common Birdwing golden wings",
+          "caption": "Wing details"
+        }
+      ]
+    },
+    "commonTiger": {
+      "name": "Common Tiger",
+      "scientificName": "Danaus genutia",
+      "description": "A graceful flyer with vibrant orange wings and bold black veining, reminiscent of the famous Monarch butterfly.",
+      "habitat": "Open meadows and flowering gardens",
+      "wingspan": "7-8 cm",
+      "lifespan": "3-4 weeks",
+      "funFact": "Successfully bred in large numbers at our sanctuary - you'll often see dozens dancing together.",
+      "bestTime": "Throughout the day",
+      "images": [
+        {
+          "alt": "Common Tiger butterfly drifting through the tropical garden",
+          "caption": "Graceful glide"
+        },
+        {
+          "alt": "Common Tiger resting on bright lantana flowers",
+          "caption": "Resting on lantana"
+        }
+      ]
+    },
+    "commonMormon": {
+      "name": "Common Mormon",
+      "scientificName": "Papilio polytes",
+      "description": "A master of disguise! This sleek black swallowtail features elegant white bands across its wings.",
+      "habitat": "Forest edges and gardens",
+      "wingspan": "9-10 cm",
+      "lifespan": "2-3 weeks",
+      "funFact": "Females can imitate poisonous butterflies so perfectly that even birds are fooled.",
+      "bestTime": "Mid-morning (9 AM-12 PM)",
+      "images": [
+        {
+          "alt": "Common Mormon basking on a leaf at Merlin Butterfly Sanctuary",
+          "caption": "Basking in the garden"
+        },
+        {
+          "alt": "White-banded Common Mormon wing pattern close-up",
+          "caption": "Mimicry details"
+        }
+      ]
+    },
+    "tailedJay": {
+      "name": "Tailed Jay",
+      "scientificName": "Graphium agamemnon",
+      "description": "A speed demon adorned with luminous lime-green spots scattered across black wings, rarely resting even while feeding.",
+      "habitat": "Tropical gardens and forest clearings",
+      "wingspan": "8-9 cm",
+      "lifespan": "2-3 weeks",
+      "funFact": "One of the fastest flying butterflies - blink and you might miss it zipping past.",
+      "bestTime": "Late morning (10 AM-1 PM)",
+      "images": [
+        {
+          "alt": "Tailed Jay speeding past tropical foliage",
+          "caption": "Speedy flight"
+        },
+        {
+          "alt": "Tailed Jay sipping nectar from pink blossoms",
+          "caption": "Nectar pause"
+        }
+      ]
+    },
+    "leopardLacewing": {
+      "name": "Leopard Lacewing",
+      "scientificName": "Cethosia cyane",
+      "description": "Upper wings blaze with fiery orange and black stripes while the underwings reveal intricate lacework patterns.",
+      "habitat": "Shaded forest areas",
+      "wingspan": "7-8 cm",
+      "lifespan": "2-3 weeks",
+      "funFact": "The underside pattern resembles delicate lace fabric - nature's haute couture.",
+      "bestTime": "Early to mid-morning (8-11 AM)",
+      "images": [
+        {
+          "alt": "Leopard Lacewing showing fiery upper wings",
+          "caption": "Tiger stripes"
+        },
+        {
+          "alt": "Underside lace patterns of the Leopard Lacewing",
+          "caption": "Lace patterns"
+        }
+      ]
+    },
+    "commonCrow": {
+      "name": "Common Crow",
+      "scientificName": "Euploea core",
+      "description": "Elegant and regal, this deep glossy brown butterfly glides majestically with white-spotted wings.",
+      "habitat": "Garden pathways and forest trails",
+      "wingspan": "8-9 cm",
+      "lifespan": "3-4 weeks",
+      "funFact": "Its slow, soaring flight pattern gives it an almost noble presence.",
+      "bestTime": "Morning and evening golden hours",
+      "images": [
+        {
+          "alt": "Common Crow gliding through the sanctuary walkway",
+          "caption": "Elegant glide"
+        },
+        {
+          "alt": "Common Crow perched on a tropical branch",
+          "caption": "Perched moment"
+        }
+      ]
+    },
+    "commonEmigrant": {
+      "name": "Common Emigrant",
+      "scientificName": "Catopsilia pomona",
+      "description": "A delicate wanderer dressed in soft whites and pale yellows, often fluttering around flowering bushes.",
+      "habitat": "Open gardens and sunny areas",
+      "wingspan": "5-6 cm",
+      "lifespan": "2-3 weeks",
+      "funFact": "Named 'Emigrant' because they're known to migrate in large groups across regions.",
+      "bestTime": "Afternoon sunshine (1-4 PM)",
+      "images": [
+        {
+          "alt": "Common Emigrant glowing in afternoon sunlight",
+          "caption": "Sunlit wings"
+        },
+        {
+          "alt": "Common Emigrant spreading wings on a leaf",
+          "caption": "Wings spread"
+        }
+      ]
+    },
+    "chestnutBob": {
+      "name": "Chestnut Bob",
+      "scientificName": "Lambrix salsala",
+      "description": "A tiny speedster skipper that zips around so quickly it seems to teleport from leaf to leaf.",
+      "habitat": "Low vegetation and leaf litter",
+      "wingspan": "3-4 cm",
+      "lifespan": "2-3 weeks",
+      "funFact": "Skippers get their name from their unique bouncing, skip-like flight pattern.",
+      "bestTime": "Throughout the day",
+      "images": [
+        {
+          "alt": "Chestnut Bob skipping between low leaves",
+          "caption": "Leaf-skimming skip"
+        },
+        {
+          "alt": "Chestnut Bob resting quietly on fresh foliage",
+          "caption": "Quiet pause"
+        }
+      ]
+    }
+  }
+}

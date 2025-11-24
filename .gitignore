@@ -1,0 +1,23 @@
+# Dependencies
+# Dependencies
+/node_modules
+
+# Environment variables
+.env
+.env.*
+
+# Service account keys
+serviceAccountKey.json
+*.key.json
+firebase-credentials.json
+
+# Build output
+dist/
+dist-ssr/
+coverage/
+
+# Misc
+.DS_Store
+*.log
+.vscode/
+.idea/
