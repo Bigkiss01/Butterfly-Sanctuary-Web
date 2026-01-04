@@ -116,9 +116,9 @@ const ButterflyApp = () => {
       medium: 'text-5xl',
       large: 'text-7xl'
     };
-    
+
     return (
-      <div 
+      <div
         className={`absolute ${sizeClasses[size]} opacity-60 pointer-events-none`}
         style={{
           animation: `float ${6 + delay}s ease-in-out infinite`,
@@ -185,49 +185,49 @@ const ButterflyApp = () => {
       {stage === 'welcome' && (
         <div className="min-h-screen bg-gradient-to-br from-violet-900 via-purple-800 to-fuchsia-900 flex items-center justify-center p-4 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-transparent to-fuchsia-600/20 animate-pulse"></div>
-          
+
           {[...Array(25)].map((_, i) => (
-            <FloatingButterfly 
-              key={i} 
-              delay={i * 0.4} 
+            <FloatingButterfly
+              key={i}
+              delay={i * 0.4}
               size={['small', 'medium', 'large'][i % 3]}
               emoji={['🦋', '🌸', '✨', '💫', '🌺'][i % 5]}
             />
           ))}
-          
-          <div 
+
+          <div
             className="bg-white/10 backdrop-blur-2xl rounded-[3rem] shadow-2xl p-10 md:p-16 max-w-4xl w-full relative z-10 border-4 border-white/30"
-            style={{ 
+            style={{
               animation: 'pulse-glow 3s ease-in-out infinite, fadeIn 0.8s ease-out',
               boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'
             }}
           >
             <div className="absolute inset-0 rounded-[3rem] shimmer"></div>
-            
+
             <div className="text-center mb-10 relative z-10">
               <div className="flex justify-center items-center mb-6">
-                <Sparkles className="w-16 h-16 text-yellow-300 mr-4 animate-spin" style={{animationDuration: '4s'}} />
+                <Sparkles className="w-16 h-16 text-yellow-300 mr-4 animate-spin" style={{ animationDuration: '4s' }} />
                 <div className="text-8xl animate-bounce">🦋</div>
-                <Sparkles className="w-16 h-16 text-yellow-300 ml-4 animate-spin" style={{animationDuration: '4s'}} />
+                <Sparkles className="w-16 h-16 text-yellow-300 ml-4 animate-spin" style={{ animationDuration: '4s' }} />
               </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6" style={{textShadow: '0 0 30px rgba(255,255,255,0.5)'}}>
+
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5)' }}>
                 Welcome to
               </h1>
               <h2 className="text-4xl md:text-6xl font-bold mb-4 gradient-text">
                 Merlin Butterfly Sanctuary
               </h2>
               <p className="text-xl md:text-2xl text-yellow-100 font-semibold mb-6">
-                Phuket Marriott Resort & Spa
+                Merlin Butterfly Sanctuary
               </p>
               <div className="inline-block bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 px-8 py-3 rounded-full">
                 <p className="text-xl font-bold text-purple-900">★★★★★ Five-Star Experience</p>
               </div>
             </div>
-            
+
             <div className="mb-10 p-8 bg-gradient-to-br from-white/20 to-white/5 rounded-3xl border-2 border-white/40">
               <p className="text-white text-xl leading-relaxed text-center mb-6">
-                Embark on an extraordinary journey through our enchanting butterfly sanctuary, 
+                Embark on an extraordinary journey through our enchanting butterfly sanctuary,
                 where nature's most exquisite creatures dance among tropical flowers.
               </p>
               <div className="grid grid-cols-3 gap-4 text-center">
@@ -245,7 +245,7 @@ const ButterflyApp = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-5">
               <input
                 type="text"
@@ -259,7 +259,7 @@ const ButterflyApp = () => {
                 onClick={() => userName.trim() && setStage('sanctuary')}
                 disabled={!userName.trim()}
                 className="w-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-purple-900 px-10 py-6 rounded-3xl text-2xl font-bold hover:from-yellow-300 hover:via-amber-400 hover:to-orange-400 disabled:opacity-50 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4 relative overflow-hidden"
-                style={{boxShadow: '0 20px 60px rgba(251,191,36,0.6)'}}
+                style={{ boxShadow: '0 20px 60px rgba(251,191,36,0.6)' }}
               >
                 <div className="absolute inset-0 shimmer"></div>
                 <span className="relative z-10">Begin Your Enchanted Journey</span>
@@ -274,16 +274,16 @@ const ButterflyApp = () => {
       {stage === 'sanctuary' && (
         <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 p-4 md:p-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.15),transparent_50%)]"></div>
-          
+
           {[...Array(15)].map((_, i) => (
             <FloatingButterfly key={i} delay={i * 0.5} emoji={['🦋', '🌺', '🌸', '🌼'][i % 4]} />
           ))}
-          
+
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="bg-white/10 backdrop-blur-2xl rounded-[3rem] shadow-2xl p-8 md:p-12 mb-8 border-4 border-white/30">
               <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-6">
                 <div className="text-center md:text-left">
-                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-2" style={{textShadow: '0 0 30px rgba(255,255,255,0.5)'}}>
+                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-2" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5)' }}>
                     Welcome, {userName}! 👋
                   </h1>
                   <p className="text-yellow-200 text-xl flex items-center gap-2 justify-center md:justify-start">
@@ -299,26 +299,26 @@ const ButterflyApp = () => {
                   Rate Experience
                 </button>
               </div>
-              
+
               <div className="bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-3xl p-8 border-2 border-teal-300/50">
                 <div className="flex items-start gap-4">
                   <Info className="w-12 h-12 text-yellow-300 flex-shrink-0" />
                   <div>
                     <h3 className="text-3xl font-bold text-white mb-4">About Our Sanctuary</h3>
                     <p className="text-white/90 text-lg leading-relaxed">
-                      Nestled within Phuket Marriott Resort & Spa, our sanctuary is a haven where 
-                      tropical butterflies flourish in enclosed and open-air gardens, creating an 
+                      Our Merlin Butterfly Sanctuary is a haven where
+                      tropical butterflies flourish in enclosed and open-air gardens, creating an
                       unforgettable encounter with nature's most delicate artistry.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center" style={{textShadow: '0 0 20px rgba(255,255,255,0.5)'}}>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center" style={{ textShadow: '0 0 20px rgba(255,255,255,0.5)' }}>
               🦋 Discover Our Magnificent Collection 🦋
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {butterflies.map((butterfly, index) => (
                 <div
@@ -333,7 +333,7 @@ const ButterflyApp = () => {
                   <div className={`h-64 bg-gradient-to-br ${butterfly.gradient} flex items-center justify-center text-8xl relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                     <div className="absolute inset-0 shimmer"></div>
-                    <span className="relative z-10 transform group-hover:scale-110 transition-all" style={{filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.8))'}}>
+                    <span className="relative z-10 transform group-hover:scale-110 transition-all" style={{ filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.8))' }}>
                       {butterfly.emoji}
                     </span>
                     <div className="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-gray-800">
@@ -356,13 +356,13 @@ const ButterflyApp = () => {
               ))}
             </div>
           </div>
-          
+
           {selectedButterfly && (
-            <div 
+            <div
               className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50"
               onClick={() => setSelectedButterfly(null)}
             >
-              <div 
+              <div
                 className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] shadow-2xl max-w-5xl w-full max-h-[95vh] overflow-y-auto relative border-4 border-white/30"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -372,27 +372,27 @@ const ButterflyApp = () => {
                 >
                   ✕
                 </button>
-                
+
                 <div className={`h-80 bg-gradient-to-br ${selectedButterfly.gradient} flex items-center justify-center text-9xl relative overflow-hidden rounded-t-[2.5rem]`}>
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute inset-0 shimmer"></div>
-                  <span className="relative z-10 animate-bounce" style={{filter: 'drop-shadow(0 0 30px rgba(255,255,255,1))'}}>
+                  <span className="relative z-10 animate-bounce" style={{ filter: 'drop-shadow(0 0 30px rgba(255,255,255,1))' }}>
                     {selectedButterfly.emoji}
                   </span>
                   <div className="absolute bottom-6 left-6 bg-white/90 px-6 py-3 rounded-2xl">
                     <p className="text-2xl font-bold text-gray-800">{selectedButterfly.rarity} Rarity</p>
                   </div>
                 </div>
-                
+
                 <div className="p-10">
                   <h2 className="text-5xl font-bold text-white mb-3">{selectedButterfly.name}</h2>
                   <p className="text-2xl text-yellow-200 italic mb-6">{selectedButterfly.scientificName}</p>
-                  
+
                   <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl p-6 mb-6 border-2 border-purple-300/30">
                     <h3 className="text-2xl font-bold text-white mb-3">Description</h3>
                     <p className="text-white/90 text-lg">{selectedButterfly.description}</p>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-6 mb-6">
                     <div className="bg-green-500/20 rounded-xl p-5 border-2 border-green-300/30">
                       <h4 className="font-bold text-white mb-2 text-lg">🌳 Habitat</h4>
@@ -411,7 +411,7 @@ const ButterflyApp = () => {
                       <p className="text-white/80">{selectedButterfly.bestTime}</p>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-2xl p-6 border-2 border-orange-300/30">
                     <h3 className="text-xl font-bold text-white mb-3">💡 Fun Fact, {userName}!</h3>
                     <p className="text-white/90 text-lg">{selectedButterfly.funFact}</p>
@@ -429,7 +429,7 @@ const ButterflyApp = () => {
           {[...Array(10)].map((_, i) => (
             <FloatingButterfly key={i} delay={i * 0.6} size="large" />
           ))}
-          
+
           <div className="bg-white/95 backdrop-blur-2xl rounded-[3rem] shadow-2xl p-12 max-w-2xl w-full relative z-10 border-4 border-white/50">
             <div className="text-center mb-8">
               <Award className="w-20 h-20 mx-auto mb-4 text-yellow-500 animate-bounce" />
@@ -443,7 +443,7 @@ const ButterflyApp = () => {
                 Please rate your visit to help us improve
               </p>
             </div>
-            
+
             <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl p-8 mb-8 border-2 border-yellow-300">
               <p className="text-center text-gray-700 text-lg mb-6">
                 How was your experience at the Merlin Butterfly Sanctuary?
@@ -458,11 +458,10 @@ const ButterflyApp = () => {
                     className="transform hover:scale-125 transition-all duration-300"
                   >
                     <Star
-                      className={`w-14 h-14 ${
-                        star <= (hoverRating || rating)
-                          ? 'fill-yellow-400 text-yellow-400'
-                          : 'text-gray-300'
-                      } transition-all`}
+                      className={`w-14 h-14 ${star <= (hoverRating || rating)
+                        ? 'fill-yellow-400 text-yellow-400'
+                        : 'text-gray-300'
+                        } transition-all`}
                     />
                   </button>
                 ))}
@@ -477,7 +476,7 @@ const ButterflyApp = () => {
                 </p>
               )}
             </div>
-            
+
             {rating > 0 && (
               <FeedbackForm
                 userName={userName}
@@ -485,14 +484,6 @@ const ButterflyApp = () => {
                 onExploreMore={() => setStage('sanctuary')}
               />
             )}
-          </div>
-        </div>onExploreMore={() => setStage('sanctuary')}
-              />
-       
-  );
-};
-
-export default ButterflyApp;     )}
           </div>
         </div>
       )}

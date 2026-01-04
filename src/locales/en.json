@@ -9,10 +9,10 @@
   "welcome": {
     "title": "Welcome to",
     "sanctuary": "Merlin Butterfly Sanctuary",
-    "hotel": "Phuket Marriott Resort & Spa",
+    "hotel": "Where Nature Meets Wonder",
     "experience": "★★★★★ Five-Star Experience",
     "intro1": "Step into an extraordinary world where nature, conservation, and luxury meet.",
-    "intro2": "The Merlin Butterfly Sanctuary isn't just a beautiful attraction - it's a living laboratory dedicated to protecting Thailand's precious butterfly heritage through our partnership with IUCN.",
+    "intro2": "The Merlin Butterfly Sanctuary isn't just a beautiful attraction - it's a living laboratory dedicated to protecting Thailand's precious butterfly heritage.",
     "begin": "Begin Your Enchanted Journey",
     "askName": "✨ May we have your name, dear guest?"
   },
@@ -20,7 +20,7 @@
     "species": "Native Species",
     "partner": "Partnership",
     "days": "Days Open",
-    "iucn": "IUCN"
+    "conservation": "Conservation"
   },
   "buttons": {
     "exploreMore": "Explore More",
@@ -32,8 +32,8 @@
     "subtitle": "Your exclusive butterfly experience awaits",
     "about": {
       "title": "About Merlin Butterfly Sanctuary",
-      "badge": "IUCN Partnership",
-      "body1": "More than just a beautiful garden, the Merlin Butterfly Sanctuary is a world-class conservation project developed in partnership with IUCN (International Union for Conservation of Nature). Our mission is to protect and restore declining local butterfly populations while creating a balanced ecosystem within the resort grounds.",
+      "badge": "Conservation Project",
+      "body1": "More than just a beautiful garden, the Merlin Butterfly Sanctuary is a world-class conservation project. Our mission is to protect and restore declining local butterfly populations while creating a balanced ecosystem within the resort grounds.",
       "body2": "We're not just about enclosures - our philosophy centers on cultivating host plants for caterpillars and nectar-rich flowers that naturally attract and nurture butterflies, allowing them to fly freely throughout our gardens.",
       "highlightsTitle": "🦋 Conservation Highlights:",
       "highlights": [

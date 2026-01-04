@@ -1,0 +1,492 @@
+[
+  {
+    "id": "Common_Mormon",
+    "en": {
+      "name": "Papilio polytes",
+      "description": "A widely distributed swallowtail butterfly. Females are famous for mimicking the unpalatable Common Rose and Crimson Rose butterflies to avoid predation.",
+      "habitat": "Open forests, meadows, gardens, and citrus groves across Asia.",
+      "wingspan": "70-115 mm",
+      "lifespan": "Males 3-4 days, Females 6-8 days (adult stage).",
+      "bestTime": "Morning when they are active.",
+      "funFact": "Females have multiple forms (polymorphism) that look completely different from each other!"
+    },
+    "rarity": 1,
+    "th": {
+      "name": "Papilio polytes",
+      "description": "ผีเสื้อหางติ่งที่พบได้ทั่วไป ตัวเมียมีชื่อเสียงในการเลียนแบบผีเสื้อหางตุ้มจุดชมพูและผีเสื้อหางตุ้มธรรมดาที่มีพิษเพื่อหลีกเลี่ยงการถูกล่า",
+      "habitat": "ป่าโปร่ง ทุ่งหญ้า สวน และสวนส้มทั่วเอเชีย",
+      "wingspan": "70-115 มม.",
+      "lifespan": "ตัวผู้ 3-4 วัน, ตัวเมีย 6-8 วัน (ตัวเต็มวัย)",
+      "bestTime": "ช่วงเช้าเมื่อพวกมันออกหากิน",
+      "funFact": "ตัวเมียมีหลายรูปแบบ (polymorphism) ซึ่งแต่ละแบบดูแตกต่างกันอย่างสิ้นเชิง!"
+    },
+    "zh": {
+      "name": "玉带凤蝶",
+      "description": "一种分布广泛的凤蝶。雌性因模仿不可食用的红珠凤蝶和曙凤蝶以躲避捕食而闻名。",
+      "habitat": "亚洲各地的开阔森林、草地、花园和柑橘园。",
+      "wingspan": "70-115 毫米",
+      "lifespan": "雄性 3-4 天，雌性 6-8 天（成虫阶段）。",
+      "bestTime": "它们活跃的早晨。",
+      "funFact": "雌性有多种形态（多态性），彼此看起来完全不同！"
+    },
+    "scientificName": "Papilio polytes",
+    "ru": {
+      "name": "Papilio polytes",
+      "description": "Широко распространенная бабочка-парусник. Самки известны тем, что имитируют несъедобных бабочек Pachliopta aristolochiae и Pachliopta hector, чтобы избежать хищников.",
+      "habitat": "Открытые леса, луга, сады и цитрусовые рощи по всей Азии.",
+      "wingspan": "70-115 мм",
+      "lifespan": "Самцы 3-4 дня, самки 6-8 дней (взрослая стадия).",
+      "bestTime": "Утро, когда они активны.",
+      "funFact": "У самок есть несколько форм (полиморфизм), которые выглядят совершенно по-разному!"
+    },
+    "jp": {
+      "name": "シロオビアゲハ",
+      "description": "広く分布しているアゲハチョウ。メスは捕食を避けるために、毒のあるベニモンアゲハに擬態することで有名です。",
+      "habitat": "アジア全域の明るい森林、草原、庭園、柑橘類の果樹園。",
+      "wingspan": "70-115 mm",
+      "lifespan": "オスは3〜4日、メスは6〜8日（成虫期）。",
+      "bestTime": "活動的な朝。",
+      "funFact": "メスには複数の型（多型）があり、それぞれ全く違う見た目をしています！"
+    },
+    "kr": {
+      "name": "무늬박이제비나비",
+      "description": "널리 분포하는 호랑나비입니다. 암컷은 포식을 피하기 위해 맛이 없는 붉은몸제비나비 등을 모방하는 것으로 유명합니다.",
+      "habitat": "아시아 전역의 탁 트인 숲, 초원, 정원 및 감귤 과수원.",
+      "wingspan": "70-115 mm",
+      "lifespan": "수컷 3-4일, 암컷 6-8일 (성충 단계).",
+      "bestTime": "활동적인 아침.",
+      "funFact": "암컷은 서로 완전히 다르게 보이는 여러 형태(다형성)를 가지고 있습니다!"
+    },
+    "ar": {
+      "name": "Papilio polytes",
+      "description": "فراشة خطافية الذيل واسعة الانتشار. تشتهر الإناث بتقليد الفراشات السامة مثل \"الوردة الشائعة\" و\"الوردة القرمزية\" لتجنب الافتراس.",
+      "habitat": "الغابات المفتوحة والمروج والحدائق وبساتين الحمضيات في جميع أنحاء آسيا.",
+      "wingspan": "70-115 ملم",
+      "lifespan": "الذكور 3-4 أيام، الإناث 6-8 أيام (مرحلة البلوغ).",
+      "bestTime": "الصباح عندما تكون نشطة.",
+      "funFact": "للإناث أشكال متعددة (تعدد الأشكال) تبدو مختلفة تمامًا عن بعضها البعض!"
+    },
+    "images": [
+      {
+        "originalName": "35646025_894640737387890_2182757265214275584_n.jpg",
+        "path": "/sorted_temp/Common_Mormon/35646025_894640737387890_2182757265214275584_n.jpg"
+      },
+      {
+        "originalName": "40429921_964054683779828_312177181058924544_n.jpg",
+        "path": "/sorted_temp/Common_Mormon/40429921_964054683779828_312177181058924544_n.jpg"
+      },
+      {
+        "originalName": "481698130_1051900303645874_6174474873612892124_n.jpg",
+        "path": "/sorted_temp/Common_Mormon/481698130_1051900303645874_6174474873612892124_n.jpg"
+      },
+      {
+        "originalName": "486422853_2731947220323890_8058390481739236645_n.jpg",
+        "path": "/sorted_temp/Common_Mormon/486422853_2731947220323890_8058390481739236645_n.jpg"
+      },
+      {
+        "originalName": "486476031_2731948903657055_6739748279342869768_n.jpg",
+        "path": "/sorted_temp/Common_Mormon/486476031_2731948903657055_6739748279342869768_n.jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (2).jpg",
+        "path": "/sorted_temp/Common_Mormon/merlin-butterfly-sanctuary (2).jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (6).jpg",
+        "path": "/sorted_temp/Common_Mormon/merlin-butterfly-sanctuary (6).jpg"
+      }
+    ]
+  },
+  {
+    "id": "Common_Tiger",
+    "en": {
+      "name": "Danaus genutia",
+      "description": "A butterfly that closely resembles the Monarch butterfly. It has tawny wings with black veins and white spots on the margins.",
+      "habitat": "Scrub jungles, dry and moist deciduous forests, and gardens across Asia and Australia.",
+      "wingspan": "70-95 mm",
+      "lifespan": "Adult lives for about 2-3 weeks.",
+      "bestTime": "Morning and sunny periods.",
+      "funFact": "It is unpalatable to predators because its larvae feed on toxic milkweed plants, just like the Monarch!"
+    },
+    "rarity": 2,
+    "th": {
+      "name": "Danaus genutia",
+      "description": "ผีเสื้อที่มีลักษณะคล้ายกับผีเสื้อจักรพรรดิ (Monarch) มาก มีปีกสีน้ำตาลอมส้มที่มีเส้นใบปีกสีดำและจุดสีขาวที่ขอบปีก",
+      "habitat": "ป่าละเมาะ ป่าผลัดใบ และสวนทั่วเอเชียและออสเตรเลีย",
+      "wingspan": "70-95 มม.",
+      "lifespan": "ตัวเต็มวัยมีอายุประมาณ 2-3 สัปดาห์",
+      "bestTime": "ช่วงเช้าและช่วงที่มีแดด",
+      "funFact": "มันมีรสชาติที่ไม่พึงประสงค์ต่อผู้ล่าเพราะตัวหนอนกินพืชมีพิษจำพวกต้นรัก เช่นเดียวกับผีเสื้อจักรพรรดิ!"
+    },
+    "zh": {
+      "name": "虎斑蝶",
+      "description": "一种与君主斑蝶非常相似的蝴蝶。它的翅膀呈黄褐色，有黑色的翅脉，边缘有白点。",
+      "habitat": "遍布亚洲和澳大利亚的灌木丛、干燥和潮湿的落叶林以及花园。",
+      "wingspan": "70-95 毫米",
+      "lifespan": "成虫寿命约为 2-3 周。",
+      "bestTime": "早晨和阳光明媚的时段。",
+      "funFact": "它对捕食者来说是不可食用的，因为它的幼虫以有毒的马利筋植物为食，就像君主斑蝶一样！"
+    },
+    "scientificName": "Danaus genutia",
+    "ru": {
+      "name": "Danaus genutia",
+      "description": "Бабочка, очень похожая на бабочку Монарх. У нее рыжевато-коричневые крылья с черными жилками и белыми пятнами по краям.",
+      "habitat": "Кустарниковые джунгли, сухие и влажные лиственные леса и сады по всей Азии и Австралии.",
+      "wingspan": "70-95 мм",
+      "lifespan": "Взрослая особь живет около 2-3 недель.",
+      "bestTime": "Утро и солнечные периоды.",
+      "funFact": "Она несъедобна для хищников, потому что ее личинки питаются ядовитыми растениями ваточника, как и Монарх!"
+    },
+    "jp": {
+      "name": "スジグロカバマダラ",
+      "description": "オオカバマダラによく似た蝶。黄褐色の羽に黒い翅脈があり、縁には白い斑点があります。",
+      "habitat": "アジアとオーストラリア全域の低木林、乾燥および湿潤な落葉樹林、庭園。",
+      "wingspan": "70-95 mm",
+      "lifespan": "成虫は約2〜3週間生きます。",
+      "bestTime": "朝や晴れた時間帯。",
+      "funFact": "オオカバマダラと同様に、幼虫が有毒なトウワタを食べるため、捕食者にとって不味いです！"
+    },
+    "kr": {
+      "name": "호랑나비  - *참고: 한국에서는 호랑나비가 Papilio xuthus를 지칭하지만, 영명 Common Tiger의 번역으로는 '호랑나비' 또는 '별선두리왕나비 사촌' 등으로 불릴 수 있음. 여기서는 직역에 가깝게 표기함.*",
+      "description": "제왕나비(Monarch)와 매우 유사한 나비입니다. 검은색 잎맥과 가장자리에 흰색 점이 있는 황갈색 날개를 가지고 있습니다.",
+      "habitat": "아시아와 호주 전역의 관목 정글, 건조 및 습윤 낙엽수림, 정원.",
+      "wingspan": "70-95 mm",
+      "lifespan": "성충은 약 2-3주 동안 삽니다.",
+      "bestTime": "아침과 화창한 시간대.",
+      "funFact": "제왕나비처럼 유충이 독성이 있는 박주가리과 식물을 먹기 때문에 포식자가 먹을 수 없습니다!"
+    },
+    "ar": {
+      "name": "Danaus genutia",
+      "description": "فراشة تشبه إلى حد كبير فراشة الملك. لها أجنحة بنية مصفرة مع عروق سوداء وبقع بيضاء على الحواف.",
+      "habitat": "أدغال الشجيرات، والغابات المتساقطة الجافة والرطبة، والحدائق في جميع أنحاء آسيا وأستراليا.",
+      "wingspan": "70-95 ملم",
+      "lifespan": "تعيش الفراشة البالغة حوالي 2-3 أسابيع.",
+      "bestTime": "الصباح والفترات المشمسة.",
+      "funFact": "إنها غير مستساغة للحيوانات المفترسة لأن يرقاتها تتغذى على نباتات الصقلاب السامة، تمامًا مثل فراشة الملك!"
+    },
+    "images": [
+      {
+        "originalName": "37367124_921803794671584_4972455488810647552_n.jpg",
+        "path": "/sorted_temp/Common_Tiger/37367124_921803794671584_4972455488810647552_n.jpg"
+      },
+      {
+        "originalName": "486239603_2731687183683227_4650628236077794776_n.jpg",
+        "path": "/sorted_temp/Common_Tiger/486239603_2731687183683227_4650628236077794776_n.jpg"
+      },
+      {
+        "originalName": "504435255_2806333482885263_7125968365322526878_n.jpg",
+        "path": "/sorted_temp/Common_Tiger/504435255_2806333482885263_7125968365322526878_n.jpg"
+      },
+      {
+        "originalName": "505206116_2809632259222052_4675942025646438002_n.jpg",
+        "path": "/sorted_temp/Common_Tiger/505206116_2809632259222052_4675942025646438002_n.jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (10).jpg",
+        "path": "/sorted_temp/Common_Tiger/merlin-butterfly-sanctuary (10).jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (5).jpg",
+        "path": "/sorted_temp/Common_Tiger/merlin-butterfly-sanctuary (5).jpg"
+      }
+    ]
+  },
+  {
+    "id": "Great_Mormon",
+    "en": {
+      "name": "Papilio memnon",
+      "description": "A large swallowtail butterfly known for its sexual dimorphism. Males are deep blue-black, while females are polymorphic and often mimic unpalatable species.",
+      "habitat": "Forests, gardens, and lowland areas across Southern Asia.",
+      "wingspan": "110-150 mm",
+      "lifespan": "Adult lives for about 14 days.",
+      "bestTime": "Morning and early afternoon.",
+      "funFact": "Females can have up to 26 different forms, some with tails and some without!"
+    },
+    "rarity": 2,
+    "th": {
+      "name": "Papilio memnon",
+      "description": "ผีเสื้อหางติ่งขนาดใหญ่ที่มีความแตกต่างระหว่างเพศชัดเจน ตัวผู้มีสีดำเหลือบน้ำเงิน ส่วนตัวเมียมีหลายรูปแบบและมักเลียนแบบผีเสื้อที่มีพิษ",
+      "habitat": "ป่า สวน และพื้นที่ราบทั่วเอเชียใต้",
+      "wingspan": "110-150 มม.",
+      "lifespan": "ตัวเต็มวัยมีอายุประมาณ 14 วัน",
+      "bestTime": "เช้าและบ่ายแก่ๆ",
+      "funFact": "ตัวเมียมีรูปแบบที่แตกต่างกันถึง 26 แบบ บางแบบมีหางและบางแบบไม่มีหาง!"
+    },
+    "zh": {
+      "name": "美凤蝶",
+      "description": "一种大型凤蝶，以其两性异形而闻名。雄性呈深蓝黑色，而雌性多态，常模仿不可食用的蝴蝶种类。",
+      "habitat": "南亚各地的森林、花园和低地地区。",
+      "wingspan": "110-150 毫米",
+      "lifespan": "成虫寿命约为 14 天。",
+      "bestTime": "上午和下午早些时候。",
+      "funFact": "雌性有多达 26 种不同的形态，有的有尾突，有的没有！"
+    },
+    "scientificName": "Papilio memnon",
+    "ru": {
+      "name": "Papilio memnon",
+      "description": "Крупная бабочка-парусник, известная своим половым диморфизмом. Самцы темно-сине-черные, а самки полиморфны и часто имитируют несъедобные виды.",
+      "habitat": "Леса, сады и низменности по всей Южной Азии.",
+      "wingspan": "110-150 мм",
+      "lifespan": "Взрослая особь живет около 14 дней.",
+      "bestTime": "Утро и ранний день.",
+      "funFact": "У самок может быть до 26 различных форм, некоторые с хвостами, а некоторые без!"
+    },
+    "jp": {
+      "name": "ナガサキアゲハ",
+      "description": "性的二型で知られる大型のアゲハチョウ。オスは濃い青黒色ですが、メスは多型で、毒のある蝶に擬態することがよくあります。",
+      "habitat": "南アジア全域の森林、庭園、低地。",
+      "wingspan": "110-150 mm",
+      "lifespan": "成虫は約14日間生きます。",
+      "bestTime": "午前中と午後の早い時間。",
+      "funFact": "メスには26種類もの異なる型があり、尾状突起があるものとないものがいます！"
+    },
+    "kr": {
+      "name": "남방제비나비",
+      "description": "성적 이형성으로 알려진 대형 호랑나비입니다. 수컷은 짙은 청검정색인 반면, 암컷은 다형이며 종종 맛이 없는 종을 모방합니다.",
+      "habitat": "남아시아 전역의 숲, 정원 및 저지대 지역.",
+      "wingspan": "110-150 mm",
+      "lifespan": "성충은 약 14일 동안 삽니다.",
+      "bestTime": "아침과 이른 오후.",
+      "funFact": "암컷은 26가지의 다른 형태를 가질 수 있으며, 일부는 꼬리가 있고 일부는 없습니다!"
+    },
+    "ar": {
+      "name": "Papilio memnon",
+      "description": "فراشة خطافية الذيل كبيرة تشتهر بازدواج الشكل الجنسي. الذكور لونهم أزرق مسود غامق، بينما الإناث متعددة الأشكال وغالبًا ما تقلد الأنواع غير المستساغة.",
+      "habitat": "الغابات والحدائق والمناطق المنخفضة في جميع أنحاء جنوب آسيا.",
+      "wingspan": "110-150 ملم",
+      "lifespan": "تعيش الفراشة البالغة حوالي 14 يومًا.",
+      "bestTime": "الصباح وبداية فترة بعد الظهر.",
+      "funFact": "يمكن أن يكون للإناث ما يصل إلى 26 شكلاً مختلفًا، بعضها بذيول والبعض الآخر بدون!"
+    },
+    "images": [
+      {
+        "originalName": "34649059_886227711562526_1578201392365961216_n.jpg",
+        "path": "/sorted_temp/Great_Mormon/34649059_886227711562526_1578201392365961216_n.jpg"
+      },
+      {
+        "originalName": "39580668_955788357939794_1551339137888419840_n.jpg",
+        "path": "/sorted_temp/Great_Mormon/39580668_955788357939794_1551339137888419840_n.jpg"
+      },
+      {
+        "originalName": "481234333_1051908790311692_6125451616450598729_n.jpg",
+        "path": "/sorted_temp/Great_Mormon/481234333_1051908790311692_6125451616450598729_n.jpg"
+      },
+      {
+        "originalName": "486357236_2732226176962661_3135755719403148721_n.jpg",
+        "path": "/sorted_temp/Great_Mormon/486357236_2732226176962661_3135755719403148721_n.jpg"
+      },
+      {
+        "originalName": "486716862_2731292450389367_838268172646107554_n.jpg",
+        "path": "/sorted_temp/Great_Mormon/486716862_2731292450389367_838268172646107554_n.jpg"
+      },
+      {
+        "originalName": "great-mormon-papilio.jpg",
+        "path": "/sorted_temp/Great_Mormon/great-mormon-papilio.jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (1).jpg",
+        "path": "/sorted_temp/Great_Mormon/merlin-butterfly-sanctuary (1).jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (7).jpg",
+        "path": "/sorted_temp/Great_Mormon/merlin-butterfly-sanctuary (7).jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary.jpg",
+        "path": "/sorted_temp/Great_Mormon/merlin-butterfly-sanctuary.jpg"
+      }
+    ]
+  },
+  {
+    "id": "Lime_Butterfly",
+    "en": {
+      "name": "Papilio demoleus",
+      "description": "A common and widespread swallowtail butterfly. It is a pest in citrus orchards and is also known as the Lemon Butterfly or Citrus Swallowtail.",
+      "habitat": "Open habitats, gardens, and citrus groves throughout tropical and subtropical Asia.",
+      "wingspan": "60-100 mm",
+      "lifespan": "Males 4-5 days, Females ~7 days (adult stage).",
+      "bestTime": "Morning and sunny periods.",
+      "funFact": "Unlike many swallowtails, it lacks the prominent tails on its hindwings!"
+    },
+    "rarity": 1,
+    "th": {
+      "name": "Papilio demoleus",
+      "description": "ผีเสื้อหางติ่งที่พบได้ทั่วไปและแพร่หลาย ถือเป็นศัตรูพืชในสวนส้มและยังเป็นที่รู้จักในชื่อผีเสื้อเลมอน",
+      "habitat": "พื้นที่โล่ง สวน และสวนส้มทั่วเขตร้อนและกึ่งเขตร้อนของเอเชีย",
+      "wingspan": "60-100 มม.",
+      "lifespan": "ตัวผู้ 4-5 วัน, ตัวเมียประมาณ 7 วัน (ตัวเต็มวัย)",
+      "bestTime": "ช่วงเช้าและช่วงที่มีแดด",
+      "funFact": "ต่างจากผีเสื้อหางติ่งส่วนใหญ่ มันไม่มีหางที่ยื่นออกมาอย่างชัดเจนที่ปีกคู่หลัง!"
+    },
+    "zh": {
+      "name": "达摩凤蝶",
+      "description": "一种常见且分布广泛的凤蝶。它是柑橘园的害虫，也被称为柠檬蝶或柑橘凤蝶。",
+      "habitat": "遍布热带和亚热带亚洲的开阔栖息地、花园和柑橘园。",
+      "wingspan": "60-100 毫米",
+      "lifespan": "雄性 4-5 天，雌性约 7 天（成虫阶段）。",
+      "bestTime": "早晨和阳光明媚的时段。",
+      "funFact": "与许多凤蝶不同，它的后翅没有明显的尾突！"
+    },
+    "scientificName": "Papilio demoleus",
+    "ru": {
+      "name": "Papilio demoleus",
+      "description": "Обычная и широко распространенная бабочка-парусник. Является вредителем цитрусовых садов и также известна как Лимонная бабочка.",
+      "habitat": "Открытые места обитания, сады и цитрусовые рощи в тропической и субтропической Азии.",
+      "wingspan": "60-100 мм",
+      "lifespan": "Самцы 4-5 дней, самки около 7 дней (взрослая стадия).",
+      "bestTime": "Утро и солнечные периоды.",
+      "funFact": "В отличие от многих парусников, у нее нет заметных хвостов на задних крыльях!"
+    },
+    "jp": {
+      "name": "オナシアゲハ",
+      "description": "一般的で広く分布しているアゲハチョウ。柑橘類の果樹園の害虫であり、レモンバタフライとも呼ばれます。",
+      "habitat": "アジアの熱帯および亜熱帯地域の開けた場所、庭園、柑橘類の果樹園。",
+      "wingspan": "60-100 mm",
+      "lifespan": "オスは4〜5日、メスは約7日（成虫期）。",
+      "bestTime": "朝や晴れた時間帯。",
+      "funFact": "多くのアゲハチョウとは異なり、後翅に目立つ尾状突起がありません！"
+    },
+    "kr": {
+      "name": "라임나비",
+      "description": "흔하고 널리 분포하는 호랑나비입니다. 감귤 과수원의 해충이며 레몬 나비라고도 불립니다.",
+      "habitat": "열대 및 아열대 아시아 전역의 탁 트인 서식지, 정원 및 감귤 과수원.",
+      "wingspan": "60-100 mm",
+      "lifespan": "수컷 4-5일, 암컷 약 7일 (성충 단계).",
+      "bestTime": "아침과 화창한 시간대.",
+      "funFact": "많은 호랑나비와 달리 뒷날개에 눈에 띄는 꼬리가 없습니다!"
+    },
+    "ar": {
+      "name": "Papilio demoleus",
+      "description": "فراشة خطافية الذيل شائعة وواسعة الانتشار. تعتبر آفة في بساتين الحمضيات وتعرف أيضًا باسم فراشة الليمون.",
+      "habitat": "الموائل المفتوحة والحدائق وبساتين الحمضيات في جميع أنحاء المناطق الاستوائية وشبه الاستوائية في آسيا.",
+      "wingspan": "60-100 ملم",
+      "lifespan": "الذكور 4-5 أيام، الإناث حوالي 7 أيام (مرحلة البلوغ).",
+      "bestTime": "الصباح والفترات المشمسة.",
+      "funFact": "على عكس العديد من الفراشات خطافية الذيل، فهي تفتقر إلى الذيول البارزة على أجنحتها الخلفية!"
+    },
+    "images": [
+      {
+        "originalName": "35682203_895637097288254_8834428753535827968_n.jpg",
+        "path": "/sorted_temp/Lime_Butterfly/35682203_895637097288254_8834428753535827968_n.jpg"
+      },
+      {
+        "originalName": "42687407_978096682375628_8686458308325801984_n.jpg",
+        "path": "/sorted_temp/Lime_Butterfly/42687407_978096682375628_8686458308325801984_n.jpg"
+      },
+      {
+        "originalName": "486361079_2731286683723277_5831507708330662169_n.jpg",
+        "path": "/sorted_temp/Lime_Butterfly/486361079_2731286683723277_5831507708330662169_n.jpg"
+      },
+      {
+        "originalName": "504647194_2808259919359286_5239949155249694623_n.jpg",
+        "path": "/sorted_temp/Lime_Butterfly/504647194_2808259919359286_5239949155249694623_n.jpg"
+      },
+      {
+        "originalName": "74230407_1226482100870417_6761369484251889664_n.jpg",
+        "path": "/sorted_temp/Lime_Butterfly/74230407_1226482100870417_6761369484251889664_n.jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (3).jpg",
+        "path": "/sorted_temp/Lime_Butterfly/merlin-butterfly-sanctuary (3).jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (8).jpg",
+        "path": "/sorted_temp/Lime_Butterfly/merlin-butterfly-sanctuary (8).jpg"
+      }
+    ]
+  },
+  {
+    "id": "Plain_Tiger",
+    "en": {
+      "name": "Danaus chrysippus",
+      "description": "A common medium-sized butterfly with tawny wings and black tips. It is unpalatable to predators due to toxins from its larval food plant (milkweed).",
+      "habitat": "Open areas, deserts, gardens, and parks across Africa and Asia.",
+      "wingspan": "70-80 mm",
+      "lifespan": "Males 10-15 days, Females 7-12 days (adult stage).",
+      "bestTime": "Throughout the day in sunny spots.",
+      "funFact": "It is believed to be one of the first butterflies ever depicted in art, appearing in a 3,500-year-old Egyptian fresco!"
+    },
+    "rarity": 1,
+    "th": {
+      "name": "Danaus chrysippus",
+      "description": "ผีเสื้อขนาดกลางที่พบได้ทั่วไป มีปีกสีน้ำตาลอมส้มและปลายปีกสีดำ มันมีรสชาติที่ไม่พึงประสงค์ต่อผู้ล่าเนื่องจากสารพิษจากพืชอาหารของตัวหนอน (ต้นรัก)",
+      "habitat": "พื้นที่โล่ง ทะเลทราย สวน และสวนสาธารณะทั่วแอฟริกาและเอเชีย",
+      "wingspan": "70-80 มม.",
+      "lifespan": "ตัวผู้ 10-15 วัน, ตัวเมีย 7-12 วัน (ตัวเต็มวัย)",
+      "bestTime": "ตลอดทั้งวันในจุดที่มีแดด",
+      "funFact": "เชื่อกันว่าเป็นหนึ่งในผีเสื้อชนิดแรกๆ ที่ถูกวาดในงานศิลปะ โดยปรากฏในภาพจิตรกรรมฝาผนังอียิปต์อายุ 3,500 ปี!"
+    },
+    "zh": {
+      "name": "金斑蝶",
+      "description": "一种常见的中型蝴蝶，翅膀呈黄褐色，翅尖为黑色。由于幼虫食用有毒植物（马利筋），它对捕食者来说是不可食用的。",
+      "habitat": "遍布非洲和亚洲的开阔地区、沙漠、花园和公园。",
+      "wingspan": "70-80 毫米",
+      "lifespan": "雄性 10-15 天，雌性 7-12 天（成虫阶段）。",
+      "bestTime": "全天阳光充足的地方。",
+      "funFact": "它被认为是艺术作品中最早描绘的蝴蝶之一，出现在 3500 年前的埃及壁画中！"
+    },
+    "scientificName": "Danaus chrysippus",
+    "ru": {
+      "name": "Danaus chrysippus",
+      "description": "Обычная бабочка среднего размера с рыжевато-коричневыми крыльями и черными кончиками. Она несъедобна для хищников из-за токсинов, получаемых гусеницами из кормового растения (ваточник).",
+      "habitat": "Открытые местности, пустыни, сады и парки по всей Африке и Азии.",
+      "wingspan": "70-80 мм",
+      "lifespan": "Самцы 10-15 дней, самки 7-12 дней (взрослая стадия).",
+      "bestTime": "В течение всего дня на солнечных местах.",
+      "funFact": "Считается, что это одна из первых бабочек, изображенных в искусстве: она появилась на египетской фреске 3500-летней давности!"
+    },
+    "jp": {
+      "name": "カバマダラ",
+      "description": "黄褐色の羽と黒い先端を持つ一般的な中型の蝶。幼虫の食草（トウワタ）からの毒素により、捕食者にとって不味いです。",
+      "habitat": "アフリカとアジア全域の開けた場所、砂漠、庭園、公園。",
+      "wingspan": "70-80 mm",
+      "lifespan": "オスは10〜15日、メスは7〜12日（成虫期）。",
+      "bestTime": "日当たりの良い場所で一日中。",
+      "funFact": "3500年前のエジプトのフレスコ画に描かれており、芸術作品に描かれた最初の蝶の一つと考えられています！"
+    },
+    "kr": {
+      "name": "별선두리왕나비",
+      "description": "황갈색 날개와 검은 끝을 가진 흔한 중형 나비입니다. 유충의 먹이 식물(박주가리과)에서 나오는 독소 때문에 포식자가 먹을 수 없습니다.",
+      "habitat": "아프리카와 아시아 전역의 탁 트인 지역, 사막, 정원 및 공원.",
+      "wingspan": "70-80 mm",
+      "lifespan": "수컷 10-15일, 암컷 7-12일 (성충 단계).",
+      "bestTime": "햇볕이 잘 드는 곳에서 하루 종일.",
+      "funFact": "3,500년 된 이집트 프레스코화에 등장하여 예술에 묘사된 최초의 나비 중 하나로 여겨집니다!"
+    },
+    "ar": {
+      "name": "Danaus chrysippus",
+      "description": "فراشة شائعة متوسطة الحجم ذات أجنحة بنية مصفرة وأطراف سوداء. وهي غير مستساغة للحيوانات المفترسة بسبب السموم الموجودة في نبات غذاء اليرقات (الصقلاب).",
+      "habitat": "المناطق المفتوحة والصحاري والحدائق والمتنزهات في جميع أنحاء أفريقيا وآسيا.",
+      "wingspan": "70-80 ملم",
+      "lifespan": "الذكور 10-15 يومًا، الإناث 7-12 يومًا (مرحلة البلوغ).",
+      "bestTime": "طوال اليوم في الأماكن المشمسة.",
+      "funFact": "يُعتقد أنها واحدة من أوائل الفراشات التي تم تصويرها في الفن، حيث ظهرت في لوحة جدارية مصرية عمرها 3500 عام!"
+    },
+    "images": [
+      {
+        "originalName": "37076673_918280255023938_361063804492054528_n.jpg",
+        "path": "/sorted_temp/Plain_Tiger/37076673_918280255023938_361063804492054528_n.jpg"
+      },
+      {
+        "originalName": "486146922_2731332660385346_6238342103925194965_n.jpg",
+        "path": "/sorted_temp/Plain_Tiger/486146922_2731332660385346_6238342103925194965_n.jpg"
+      },
+      {
+        "originalName": "503546573_2806153696236575_6403116052656642016_n.jpg",
+        "path": "/sorted_temp/Plain_Tiger/503546573_2806153696236575_6403116052656642016_n.jpg"
+      },
+      {
+        "originalName": "504785468_2807429242775687_1758992447627694473_n.jpg",
+        "path": "/sorted_temp/Plain_Tiger/504785468_2807429242775687_1758992447627694473_n.jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (4).jpg",
+        "path": "/sorted_temp/Plain_Tiger/merlin-butterfly-sanctuary (4).jpg"
+      },
+      {
+        "originalName": "merlin-butterfly-sanctuary (9).jpg",
+        "path": "/sorted_temp/Plain_Tiger/merlin-butterfly-sanctuary (9).jpg"
+      }
+    ]
+  }
+]

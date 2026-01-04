@@ -5,10 +5,10 @@
   "welcome": {
     "title": "어서 오세요",
     "sanctuary": "Merlin Butterfly Sanctuary",
-    "hotel": "푸켓 메리어트 리조트 & 스파",
+    "hotel": "자연과 경이로움이 만나는 곳",
     "experience": "★★★★★ 오성급 경험",
     "intro1": "자연과 보존, 럭셔리가 어우러진 특별한 세계로 들어오세요.",
-    "intro2": "Merlin Butterfly Sanctuary는 IUCN과 함께 태국의 소중한 나비를 지키는 살아 있는 연구소입니다.",
+    "intro2": "Merlin Butterfly Sanctuary는 태국의 소중한 나비를 지키는 살아 있는 연구소입니다.",
     "begin": "마법 같은 여정 시작",
     "askName": "✨ 성함을 알려 주시겠어요?"
   },
@@ -16,7 +16,7 @@
     "species": "토종 종",
     "partner": "파트너십",
     "days": "연중무휴",
-    "iucn": "IUCN"
+    "conservation": "보전"
   },
   "buttons": {
     "exploreMore": "더 둘러보기",
@@ -28,8 +28,8 @@
     "subtitle": "당신만의 나비 경험이 기다리고 있어요",
     "about": {
       "title": "Merlin Butterfly Sanctuary 소개",
-      "badge": "IUCN 파트너십",
-      "body1": "우리는 IUCN과 함께 현지 나비 개체수를 복원하고 리조트 내 균형 잡힌 생태계를 만드는 세계적 보전 프로젝트를 운영하고 있습니다.",
+      "badge": "보전 프로젝트",
+      "body1": "우리는 현지 나비 개체수를 복원하고 리조트 내 균형 잡힌 생태계를 만드는 세계적 보전 프로젝트를 운영하고 있습니다.",
       "body2": "우리의 철학은 애벌레 먹이식물과 꿀이 풍부한 꽃을 가꾸어 나비가 온 정원을 자유롭게 날도록 돕는 것입니다.",
       "highlightsTitle": "🦋 보전 하이라이트",
       "highlights": [

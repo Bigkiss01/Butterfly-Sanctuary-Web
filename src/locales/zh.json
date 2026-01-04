@@ -9,10 +9,10 @@
   "welcome": {
     "title": "欢迎来到",
     "sanctuary": "Merlin Butterfly Sanctuary",
-    "hotel": "普吉岛万豪梅林海滩度假酒店",
+    "hotel": "自然与奇迹相遇之地",
     "experience": "★★★★★ 五星级体验",
     "intro1": "踏入一个融合自然、保育与奢华的奇妙世界。",
-    "intro2": "Merlin Butterfly Sanctuary 不只是美丽景点，更是与 IUCN 合作、致力保护泰国珍稀蝴蝶的活体实验室。",
+    "intro2": "Merlin Butterfly Sanctuary 不只是美丽景点，更是致力保护泰国珍稀蝴蝶的活体实验室。",
     "begin": "开启奇幻旅程",
     "askName": "✨ 可以告诉我们您的名字吗？"
   },
@@ -20,7 +20,7 @@
     "species": "本地物种",
     "partner": "合作伙伴",
     "days": "全年开放",
-    "iucn": "IUCN"
+    "conservation": "保育"
   },
   "buttons": {
     "exploreMore": "继续探索",
@@ -32,8 +32,8 @@
     "subtitle": "独家蝴蝶体验正在等你",
     "about": {
       "title": "关于 Merlin 蝴蝶保护中心",
-      "badge": "IUCN 合作",
-      "body1": "我们与 IUCN（国际自然保护联盟）携手打造世界级保育计划，守护濒危蝴蝶并营造平衡生态。",
+      "badge": "保育项目",
+      "body1": "我们致力打造世界级保育计划，守护濒危蝴蝶并营造平衡生态。",
       "body2": "核心理念是种植寄主植物与富含花蜜的花卉，让蝴蝶能在园区内自在翱翔而非被圈养。",
       "highlightsTitle": "🦋 保育亮点：",
       "highlights": [

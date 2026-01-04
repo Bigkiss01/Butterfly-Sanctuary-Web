@@ -1,0 +1,37 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Match any document in the 'butterflies' collection
+    match /butterflies/{butterflyId} {
+      // Allow read access to everyone (public catalog)
+      allow read: if true;
+      
+      // Allow write access only to authenticated users (admins)
+      allow write: if isAuthenticated();
+      
+      // Butterfly gallery subcollection
+      match /gallery/{imageId} {
+      	allow read: if true;
+        allow write: if isAuthenticated();
+      }
+    }
+    
+    // Feedback collection
+    match /feedback/{feedbackId} {
+      // Allow create access to everyone (public feedback form)
+      // Validate basic fields
+      allow create: if request.resource.data.rating is number 
+                    && request.resource.data.rating >= 1 
+                    && request.resource.data.rating <= 5;
+      
+      // Allow read/update/delete only for admins
+      allow read, update, delete: if isAuthenticated();
+    }
+  }
+}

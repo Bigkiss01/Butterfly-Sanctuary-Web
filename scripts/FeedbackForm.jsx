@@ -5,6 +5,8 @@ import { Star, Heart, Home, Send, Loader2 } from 'lucide-react';
 
 const FeedbackForm = ({ userName, rating, setRating, hoverRating, setHoverRating, onSubmitted, onExploreMore }) => {
   const [comment, setComment] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
   const [status, setStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -25,6 +27,8 @@ const FeedbackForm = ({ userName, rating, setRating, hoverRating, setHoverRating
         comment: comment,
         language: navigator.language.split('-')[0] || 'en', // Get browser language
         createdAt: serverTimestamp(), // Use server timestamp for consistency
+        contactEmail: contactEmail,
+        contactPhone: contactPhone,
         metadata: { source: 'webapp' },
       });
       setStatus('success');
@@ -60,6 +64,22 @@ const FeedbackForm = ({ userName, rating, setRating, hoverRating, setHoverRating
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 animate-slideUp">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          type="email"
+          className="w-full px-6 py-4 text-lg rounded-2xl focus:outline-none focus:ring-4 focus:ring-yellow-400 transition-all duration-300 bg-white border-2 border-gray-200"
+          placeholder="Email (optional)"
+          value={contactEmail}
+          onChange={(e) => setContactEmail(e.target.value)}
+        />
+        <input
+          type="tel"
+          className="w-full px-6 py-4 text-lg rounded-2xl focus:outline-none focus:ring-4 focus:ring-yellow-400 transition-all duration-300 bg-white border-2 border-gray-200"
+          placeholder="Phone (optional)"
+          value={contactPhone}
+          onChange={(e) => setContactPhone(e.target.value)}
+        />
+      </div>
       <textarea
         className="w-full px-6 py-4 text-lg rounded-2xl focus:outline-none focus:ring-4 focus:ring-yellow-400 transition-all duration-300 bg-white border-2 border-gray-200"
         placeholder="Care to share more? (optional)"

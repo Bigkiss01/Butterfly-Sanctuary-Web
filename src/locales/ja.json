@@ -9,10 +9,10 @@
   "welcome": {
     "title": "ようこそ",
     "sanctuary": "Merlin Butterfly Sanctuary",
-    "hotel": "プーケット・マリオット・リゾート＆スパ",
+    "hotel": "自然と感動が出会う場所",
     "experience": "★★★★★ 五つ星の感動",
     "intro1": "自然・保全・ラグジュアリーが融合した特別な世界へ。",
-    "intro2": "Merlin Butterfly Sanctuary は IUCN と連携し、タイの貴重な蝶を守る“生きたラボ”です。",
+    "intro2": "Merlin Butterfly Sanctuary はタイの貴重な蝶を守る生きたラボです。",
     "begin": "夢の旅をはじめる",
     "askName": "✨ お名前を教えていただけますか？"
   },
@@ -20,7 +20,7 @@
     "species": "在来種",
     "partner": "パートナー",
     "days": "年間営業日",
-    "iucn": "IUCN"
+    "conservation": "保全"
   },
   "buttons": {
     "exploreMore": "さらに見る",
@@ -32,8 +32,8 @@
     "subtitle": "世界に一つだけの蝶体験があなたを待っています",
     "about": {
       "title": "Merlin Butterfly Sanctuary について",
-      "badge": "IUCN パートナーシップ",
-      "body1": "私たちは IUCN（国際自然保護連合）と協力し、リゾート内でバランスの取れた生態系を育みながら、減少する在来蝶の保護に取り組んでいます。",
+      "badge": "保全プロジェクト",
+      "body1": "私たちはリゾート内でバランスの取れた生態系を育みながら、減少する在来蝶の保護に取り組んでいます。",
       "body2": "飼育施設ではなく、幼虫の食草と蜜源植物を育て、蝶が庭全体を自由に飛び交える環境づくりを目指しています。",
       "highlightsTitle": "🦋 保存活動ハイライト",
       "highlights": [

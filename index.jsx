@@ -1,8 +1,10 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { db } from './src/firebase';
 
 import FeedbackForm from './scripts/FeedbackForm';
 import { useTranslation } from 'react-i18next';
-import { Star, Sparkles, Info, Award, Heart, Home, ChevronDown } from 'lucide-react';
+import { Star, Sparkles, Info, Award, Heart, Home, ChevronDown, X } from 'lucide-react';
 import useButterflySounds from './src/hooks/useButterflySounds';
 
 const LANGUAGE_OPTIONS = [
@@ -64,7 +66,7 @@ const BUTTERFLIES = [
     key: 'commonTiger',
     name: "Common Tiger",
     scientificName: "Danaus genutia",
-    description: "A graceful flyer with vibrant orange wings and bold black veining, reminiscent of the famous Monarch butterfly. Watch it glide slowly and elegantly through our gardens, making it perfect for photography.",
+    description: "A graceful flyer with vibrant orange wings and bold black veining, reminiscent of the famous Monarch butterfly. Watch it glide slowly and elegantly through the gardens, making it perfect for photography.",
     habitat: "Open meadows and flowering gardens",
     wingspan: "7-8 cm",
     lifespan: "3-4 weeks",
@@ -257,6 +259,28 @@ const ButterflyApp = () => {
   const [selectedButterflyId, setSelectedButterflyId] = useState(null);
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
+  const [firestoreButterflies, setFirestoreButterflies] = useState([]);
+  const [showAboutModal, setShowAboutModal] = useState(false);
+
+  useEffect(() => {
+    const fetchButterflies = async () => {
+      try {
+        const q = query(collection(db, 'butterflies'), orderBy('order', 'asc'));
+        const querySnapshot = await getDocs(q);
+        const butterfliesData = [];
+        querySnapshot.forEach((doc) => {
+          butterfliesData.push({ id: doc.id, ...doc.data() });
+        });
+        if (butterfliesData.length > 0) {
+          setFirestoreButterflies(butterfliesData);
+        }
+      } catch (error) {
+        console.error("Error fetching butterflies:", error);
+      }
+    };
+    fetchButterflies();
+  }, []);
+
   const {
     enabled: soundEnabled,
     toggleSounds,
@@ -291,10 +315,64 @@ const ButterflyApp = () => {
     });
   }, [i18n.language, t]);
 
-  const selectedButterfly = useMemo(
-    () => localizedButterflies.find((butterfly) => butterfly.id === selectedButterflyId) || null,
-    [localizedButterflies, selectedButterflyId]
-  );
+  const finalButterflies = useMemo(() => {
+    if (firestoreButterflies.length > 0) {
+      return firestoreButterflies.map(butterfly => {
+        const lang = i18n.language?.split('-')[0] || 'en';
+        return {
+          ...butterfly,
+          name: butterfly.name?.[lang] || butterfly.name?.en || butterfly.name,
+          scientificName: butterfly.scientificName?.[lang] || butterfly.scientificName?.en || butterfly.scientificName,
+          description: butterfly.description?.[lang] || butterfly.description?.en || butterfly.description,
+          habitat: butterfly.habitat?.[lang] || butterfly.habitat?.en || butterfly.habitat,
+          wingspan: butterfly.wingspan?.[lang] || butterfly.wingspan?.en || butterfly.wingspan,
+          lifespan: butterfly.lifespan?.[lang] || butterfly.lifespan?.en || butterfly.lifespan,
+          funFact: butterfly.funFact?.[lang] || butterfly.funFact?.en || butterfly.funFact,
+          bestTime: butterfly.bestTime?.[lang] || butterfly.bestTime?.en || butterfly.bestTime,
+          images: butterfly.galleryImages?.map(img => ({
+            src: img.url,
+            alt: img.caption?.[lang] || img.caption?.en || butterfly.name?.en,
+            caption: img.caption?.[lang] || img.caption?.en
+          })) || []
+        };
+      });
+    }
+    return localizedButterflies;
+  }, [firestoreButterflies, localizedButterflies, i18n.language]);
+
+  const [selectedButterfly, setSelectedButterfly] = useState(null);
+
+  useEffect(() => {
+    const loadSelectedButterfly = async () => {
+      if (!selectedButterflyId) {
+        setSelectedButterfly(null);
+        return;
+      }
+
+      const butterfly = finalButterflies.find(b => b.id === selectedButterflyId);
+      if (butterfly) {
+        // Fetch gallery from subcollection
+        try {
+          const galleryRef = collection(db, 'butterflies', butterfly.id, 'gallery');
+          const snapshot = await getDocs(galleryRef);
+          const galleryImages = snapshot.docs.map(doc => ({
+            src: doc.data().url,
+            alt: doc.data().caption?.en || butterfly.name,
+            caption: doc.data().caption?.en
+          }));
+
+          setSelectedButterfly({
+            ...butterfly,
+            images: galleryImages.length > 0 ? galleryImages : butterfly.images // Fallback to default/legacy
+          });
+        } catch (error) {
+          console.error("Error fetching gallery:", error);
+          setSelectedButterfly(butterfly);
+        }
+      }
+    };
+    loadSelectedButterfly();
+  }, [selectedButterflyId, finalButterflies]);
 
   const ratingLabels = t('feedback.rating', { returnObjects: true }) || [];
   const highlights = t('sanctuary.about.highlights', { returnObjects: true }) || [];
@@ -360,9 +438,9 @@ const ButterflyApp = () => {
   };
 
   const LanguageSelector = () => (
-    <div className="fixed top-4 right-4 z-50" ref={langMenuRef}>
-      <div className="flex flex-wrap items-center gap-2 bg-slate-900/80 border border-white/30 px-4 py-2 rounded-full shadow-2xl backdrop-blur relative">
-        <span className="text-white/80 text-xs font-semibold tracking-[0.2em] uppercase pr-2">
+    <div className="fixed top-3 right-3 md:top-4 md:right-4 z-50" ref={langMenuRef}>
+      <div className="flex flex-wrap items-center gap-1.5 md:gap-2 bg-slate-900/80 border border-white/30 px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-2xl backdrop-blur relative">
+        <span className="text-white/80 text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase pr-1 md:pr-2 hidden sm:inline">
           {t('language.label')}
         </span>
         <button
@@ -496,7 +574,7 @@ const ButterflyApp = () => {
           ))}
 
           <div
-            className="bg-white/10 backdrop-blur-2xl rounded-[3rem] shadow-2xl p-10 md:p-16 max-w-4xl w-full relative z-10 border-4 border-white/30"
+            className="bg-white/10 backdrop-blur-2xl rounded-[2rem] md:rounded-[3rem] shadow-2xl p-6 md:p-16 max-w-4xl w-full relative z-10 border-2 md:border-4 border-white/30 mx-4 md:mx-auto"
             style={{
               animation: 'pulse-glow 3s ease-in-out infinite, fadeIn 0.8s ease-out',
               boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'
@@ -504,41 +582,41 @@ const ButterflyApp = () => {
           >
             <div className="absolute inset-0 rounded-[3rem] shimmer pointer-events-none"></div>
 
-            <div className="text-center mb-10 relative z-10">
-              <div className="flex justify-center items-center mb-6">
-                <Sparkles className="w-16 h-16 text-yellow-300 mr-4 animate-spin" style={{ animationDuration: '4s' }} />
-                <div className="text-8xl animate-bounce">🦋</div>
-                <Sparkles className="w-16 h-16 text-yellow-300 ml-4 animate-spin" style={{ animationDuration: '4s' }} />
+            <div className="text-center mb-8 md:mb-10 relative z-10">
+              <div className="flex justify-center items-center mb-4 md:mb-6">
+                <Sparkles className="w-10 h-10 md:w-16 md:h-16 text-yellow-300 mr-2 md:mr-4 animate-spin" style={{ animationDuration: '4s' }} />
+                <div className="text-6xl md:text-8xl animate-bounce">🦋</div>
+                <Sparkles className="w-10 h-10 md:w-16 md:h-16 text-yellow-300 ml-2 md:ml-4 animate-spin" style={{ animationDuration: '4s' }} />
               </div>
 
-              <h1 className="text-5xl font-bold text-white mb-6" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5)' }}>
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5)' }}>
                 {t('welcome.title')}
               </h1>
-              <h2 className="text-4xl md:text-6xl font-bold mb-4 gradient-text leading-normal inline-block pb-2">
+              <h2 className="text-2xl md:text-6xl font-bold mb-3 md:mb-4 gradient-text leading-normal inline-block pb-2">
                 {t('welcome.sanctuary')}
               </h2>
-              <p className="text-xl md:text-2xl text-yellow-100 font-semibold mb-6">{t('welcome.hotel')}</p>
+              <p className="text-lg md:text-2xl text-yellow-100 font-semibold mb-4 md:mb-6">{t('welcome.hotel')}</p>
               <div className="inline-block bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 px-8 py-3 rounded-full">
                 <p className="text-xl font-bold text-purple-900">{t('welcome.experience')}</p>
               </div>
             </div>
 
-            <div className="mb-10 p-8 bg-gradient-to-br from-white/20 to-white/5 rounded-3xl border-2 border-white/40">
-              <p className="text-white text-xl leading-relaxed text-center mb-6">
+            <div className="mb-6 md:mb-10 p-4 md:p-8 bg-gradient-to-br from-white/20 to-white/5 rounded-2xl md:rounded-3xl border-2 border-white/40">
+              <p className="text-white text-base md:text-xl leading-relaxed text-center mb-4 md:mb-6">
                 {t('welcome.intro1')} {t('welcome.intro2')}
               </p>
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div className="bg-white/10 rounded-2xl p-4 border border-white/30">
-                  <p className="text-yellow-300 text-3xl font-bold">30+</p>
-                  <p className="text-white text-sm">{t('stats.species')}</p>
+              <div className="grid grid-cols-3 gap-3 md:gap-4 text-center">
+                <div className="bg-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 border border-white/30">
+                  <p className="text-yellow-300 text-2xl md:text-3xl font-bold">30+</p>
+                  <p className="text-white text-xs md:text-sm">{t('stats.species')}</p>
                 </div>
-                <div className="bg-white/10 rounded-2xl p-4 border border-white/30">
-                  <p className="text-yellow-300 text-3xl font-bold">{t('stats.iucn')}</p>
-                  <p className="text-white text-sm">{t('stats.partner')}</p>
+                <div className="bg-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 border border-white/30">
+                  <p className="text-yellow-300 text-2xl md:text-3xl font-bold">Open</p>
+                  <p className="text-white text-xs md:text-sm">Air Garden</p>
                 </div>
-                <div className="bg-white/10 rounded-2xl p-4 border border-white/30">
-                  <p className="text-yellow-300 text-3xl font-bold">365</p>
-                  <p className="text-white text-sm">{t('stats.days')}</p>
+                <div className="bg-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 border border-white/30">
+                  <p className="text-yellow-300 text-2xl md:text-3xl font-bold">365</p>
+                  <p className="text-white text-xs md:text-sm">{t('stats.days')}</p>
                 </div>
               </div>
             </div>
@@ -547,7 +625,7 @@ const ButterflyApp = () => {
               <input
                 type="text"
                 placeholder={t('welcome.askName')}
-                className="w-full px-8 py-6 text-xl rounded-3xl focus:outline-none focus:ring-4 focus:ring-yellow-400 transition-all duration-300 bg-white/95 font-medium relative z-20"
+                className="w-full px-6 md:px-8 py-4 md:py-6 text-lg md:text-xl rounded-2xl md:rounded-3xl focus:outline-none focus:ring-4 focus:ring-yellow-400 transition-all duration-300 bg-white/95 font-medium relative z-20"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleAdvanceToSanctuary()}
@@ -556,7 +634,7 @@ const ButterflyApp = () => {
               <button
                 onClick={handleAdvanceToSanctuary}
                 disabled={!userName.trim()}
-                className="w-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-purple-900 px-10 py-6 rounded-3xl text-2xl font-bold hover:from-yellow-300 hover:via-amber-400 hover:to-orange-400 disabled:opacity-50 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4 relative overflow-hidden z-20"
+                className="w-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-purple-900 px-6 md:px-10 py-4 md:py-6 rounded-2xl md:rounded-3xl text-xl md:text-2xl font-bold hover:from-yellow-300 hover:via-amber-400 hover:to-orange-400 disabled:opacity-50 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 md:gap-4 relative overflow-hidden z-20"
                 style={{ boxShadow: '0 20px 60px rgba(251,191,36,0.6)' }}
               >
                 <div className="absolute inset-0 shimmer pointer-events-none"></div>
@@ -577,97 +655,114 @@ const ButterflyApp = () => {
             <FloatingButterfly key={i} delay={i * 0.5} emoji={['🦋', '🌺', '🌸', '🌼'][i % 4]} />
           ))}
 
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="bg-white/10 backdrop-blur-2xl rounded-[3rem] shadow-2xl p-8 md:p-12 mb-8 border-4 border-white/30">
-              <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-6">
+          <div className="max-w-7xl mx-auto relative z-10 px-2 md:px-0">
+            <div className="bg-white/10 backdrop-blur-2xl rounded-2xl md:rounded-[3rem] shadow-2xl p-5 md:p-12 mb-6 md:mb-8 border-2 md:border-4 border-white/30">
+              <div className="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-8 gap-4 md:gap-6">
                 <div className="text-center md:text-left">
-                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-2" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5)' }}>
+                  <h1 className="text-2xl md:text-6xl font-bold text-white mb-2" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5)' }}>
                     {t('sanctuary.greeting', { name: guestName })}
                   </h1>
-                  <p className="text-yellow-200 text-xl flex items-center gap-2 justify-center md:justify-start">
-                    <Sparkles className="w-5 h-5" />
+                  <p className="text-yellow-200 text-lg md:text-xl flex items-center gap-2 justify-center md:justify-start">
+                    <Sparkles className="w-4 h-4 md:w-5 md:h-5" />
                     {t('sanctuary.subtitle')}
                   </p>
                 </div>
                 <button
                   onClick={handleOpenRating}
-                  className="bg-gradient-to-r from-amber-400 to-red-500 text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-3"
+                  className="bg-gradient-to-r from-amber-400 to-red-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl text-base md:text-xl font-bold hover:scale-110 transition-all shadow-2xl flex items-center gap-2 md:gap-3"
                 >
-                  <Star className="w-6 h-6 fill-white" />
+                  <Star className="w-5 h-5 md:w-6 md:h-6 fill-white" />
                   {t('buttons.rateExperience')}
                 </button>
               </div>
-
-              <div className="bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-3xl p-8 border-2 border-teal-300/50">
-                <div className="flex items-start gap-4">
-                  <Info className="w-12 h-12 text-yellow-300 flex-shrink-0" />
+              <div className="bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-2xl md:rounded-3xl p-4 md:p-8 border-2 border-teal-300/50">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <Info className="w-8 h-8 md:w-12 md:h-12 text-yellow-300 flex-shrink-0" />
                   <div>
-                    <h3 className="text-3xl font-bold text-white mb-3">{t('sanctuary.about.title')}</h3>
-                    <p className="text-white/90 text-lg leading-relaxed mb-4">{t('sanctuary.about.body1')}</p>
-                    <p className="text-white/90 text-lg leading-relaxed mb-4">{t('sanctuary.about.body2')}</p>
-                    <div className="bg-white/10 rounded-xl p-5 border border-white/30">
-                      <h4 className="text-xl font-bold text-yellow-300 mb-3">{t('sanctuary.about.highlightsTitle')}</h4>
-                      <ul className="text-white/90 space-y-2 text-base">
-                        {highlightItems.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center" style={{ textShadow: '0 0 20px rgba(255,255,255,0.5)' }}>
-              {t('sanctuary.speciesHeading')}
-            </h2>
-
-            <p className="text-white/90 text-xl text-center mb-8 max-w-3xl mx-auto">{t('sanctuary.speciesIntro')}</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {localizedButterflies.map((butterfly, index) => (
-                <div
-                  key={butterfly.id}
-                  className="bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-500 border-3 border-white/30 group"
-                  onClick={() => handleSelectButterfly(butterfly.id)}
-
-                  style={{
-                    animation: `cardFloat 4s ease-in-out infinite`,
-                    animationDelay: `${index * 0.3}s`
-                  }}
-                >
-                  <div className={`h-64 bg-gradient-to-br ${butterfly.gradient} flex items-center justify-center text-8xl relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
-                    <div className="absolute inset-0 shimmer"></div>
-                    <span className="relative z-10 transform group-hover:scale-110 transition-all" style={{ filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.8))' }}>
-                      {butterfly.emoji}
-                    </span>
-                    <div className="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-gray-800">
-                      {butterfly.rarity}
-                    </div>
-                  </div>
-                  <div className="p-6 bg-gradient-to-br from-white/10 to-white/5">
-                    <h3 className="text-3xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
-                      {butterfly.name}
-                    </h3>
-                    <p className="text-yellow-200 italic mb-4 text-lg">{butterfly.scientificName}</p>
-                    <p className="text-white/80 mb-4">{butterfly.description}</p>
-                    <p className="text-yellow-300 text-sm mb-4">{t('sanctuary.bestViewing', { time: butterfly.bestTime })}</p>
+                    <h3 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3">{t('sanctuary.about.title')}</h3>
+                    <p className="text-white/90 text-sm md:text-lg leading-relaxed mb-3 md:mb-4 line-clamp-3">
+                      {t('sanctuary.about.body1')}
+                    </p>
                     <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleSelectButterfly(butterfly.id);
-                      }}
-
-                      className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-purple-900 py-3 rounded-xl font-bold hover:from-yellow-300 transition-all flex items-center justify-center gap-2"
+                      onClick={() => setShowAboutModal(true)}
+                      className="text-yellow-300 font-bold hover:text-yellow-200 underline decoration-2 underline-offset-4 transition-colors text-sm md:text-base"
                     >
-                      <Sparkles className="w-5 h-5" />
-                      {t('sanctuary.exploreDetails')}
+                      {t('buttons.readMore', { defaultValue: 'Read More' })}
                     </button>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-8 mt-8 md:mt-20 text-center" style={{ textShadow: '0 0 20px rgba(255,255,255,0.5)' }}>
+                {t('sanctuary.speciesHeading')}
+              </h2>
+
+              <p className="text-white/90 text-base md:text-xl text-center mb-6 md:mb-8 max-w-3xl mx-auto px-2">{t('sanctuary.speciesIntro')}</p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+                {finalButterflies.map((butterfly, index) => (
+                  <div
+                    key={butterfly.id}
+                    className="bg-white/10 backdrop-blur-2xl rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-500 border-2 md:border-3 border-white/30 group h-full flex flex-col"
+                    onClick={() => handleSelectButterfly(butterfly.id)}
+                  >
+                    <div className="relative h-52 md:h-64 overflow-hidden flex-shrink-0">
+                      {butterfly.mainImage ? (
+                        <>
+                          <img
+                            src={butterfly.mainImage}
+                            alt={butterfly.name}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className={`absolute inset-0 bg-gradient-to-br ${butterfly.gradient} opacity-20 group-hover:opacity-10 transition-opacity`}></div>
+                        </>
+                      ) : (
+                        <div className={`h-full bg-gradient-to-br ${butterfly.gradient} flex flex-col items-center justify-center text-center p-4`}>
+                          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+                          <div className="absolute inset-0 shimmer"></div>
+                          <span className="relative z-10 text-6xl md:text-8xl transform group-hover:scale-110 transition-all mb-2" style={{ filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.8))' }}>
+                            {butterfly.emoji}
+                          </span>
+                          <span className="relative z-10 text-white/90 font-bold text-sm md:text-base bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">
+                            Real sanctuary photos coming soon
+                          </span>
+                        </div>
+                      )}
+
+                      <div className="absolute inset-0 shimmer pointer-events-none"></div>
+
+                      {/* Emoji Badge - Top Left */}
+                      <div className="absolute top-2 left-2 md:top-4 md:left-4 w-10 h-10 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-lg animate-bounce" style={{ animationDuration: '3s' }}>
+                        <span className="text-2xl md:text-4xl">{butterfly.emoji}</span>
+                      </div>
+
+                      {/* Rarity Stars - Top Right */}
+                      <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-white/90 px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-sm font-bold text-gray-800 shadow-lg">
+                        {typeof butterfly.rarity === 'number' ? '★'.repeat(butterfly.rarity) + '☆'.repeat(5 - butterfly.rarity) : butterfly.rarity}
+                      </div>
+                    </div>
+                    <div className="p-5 md:p-6 bg-gradient-to-br from-white/10 to-white/5 flex-grow flex flex-col">
+                      <h3 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-2 group-hover:text-yellow-300 transition-colors line-clamp-1">
+                        {butterfly.name}
+                      </h3>
+                      <p className="text-yellow-200 italic mb-3 md:mb-4 text-base md:text-lg line-clamp-1">{butterfly.scientificName}</p>
+                      <p className="text-white/80 mb-3 md:mb-4 text-sm md:text-base line-clamp-3 md:line-clamp-3 flex-grow">{butterfly.description}</p>
+                      <p className="text-yellow-300 text-sm md:text-sm mb-4 md:mb-4 line-clamp-1">{t('sanctuary.bestViewing', { time: butterfly.bestTime })}</p>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelectButterfly(butterfly.id);
+                        }}
+                        className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-purple-900 px-4 py-3 md:py-3 rounded-xl text-base md:text-base font-bold hover:from-yellow-300 transition-all flex items-center justify-center gap-2 mt-auto"
+                      >
+                        <Sparkles className="w-5 h-5 md:w-5 md:h-5" />
+                        {t('sanctuary.exploreDetails')}
+                      </button>
+                    </div >
+                  </div >
+                ))}
+              </div>
             </div>
 
             {selectedButterfly && (
@@ -774,67 +869,104 @@ const ButterflyApp = () => {
                 </div>
               </div>
             )}
-          </div>
-        </div>
+          </div >
+        </div >
       )}
 
       {/* RATING SCREEN */}
-      {stage === 'rating' && (
-        <div className="min-h-screen bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 flex items-center justify-center p-4 relative overflow-hidden">
-          {[...Array(10)].map((_, i) => (
-            <FloatingButterfly key={i} delay={i * 0.6} size="large" />
-          ))}
+      {
+        stage === 'rating' && (
+          <div className="min-h-screen bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 flex items-center justify-center p-4 relative overflow-hidden">
+            {[...Array(10)].map((_, i) => (
+              <FloatingButterfly key={i} delay={i * 0.6} size="large" />
+            ))}
 
-          <div className="bg-white/95 backdrop-blur-2xl rounded-[3rem] shadow-2xl p-12 max-w-2xl w-full relative z-10 border-4 border-white/50">
-            <div className="text-center mb-8">
-              <Award className="w-20 h-20 mx-auto mb-4 text-yellow-500 animate-bounce" />
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-yellow-600 to-red-600 bg-clip-text text-transparent mb-4">
-                {t('feedback.title', { name: guestName })}
-              </h1>
-              <p className="text-xl text-gray-700 mb-2">{t('feedback.subtitle')}</p>
-              <p className="text-lg text-gray-600">{t('feedback.prompt2')}</p>
-            </div>
+            <div className="bg-white/95 backdrop-blur-2xl rounded-[3rem] shadow-2xl p-12 max-w-2xl w-full relative z-10 border-4 border-white/50">
+              <div className="text-center mb-8">
+                <Award className="w-20 h-20 mx-auto mb-4 text-yellow-500 animate-bounce" />
+                <h1 className="text-5xl font-bold bg-gradient-to-r from-yellow-600 to-red-600 bg-clip-text text-transparent mb-4">
+                  {t('feedback.title', { name: guestName })}
+                </h1>
+                <p className="text-xl text-gray-700 mb-2">{t('feedback.subtitle')}</p>
+                <p className="text-lg text-gray-600">{t('feedback.prompt2')}</p>
+              </div>
 
-            <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl p-8 mb-8 border-2 border-yellow-300">
-              <p className="text-center text-gray-700 text-lg mb-6">{t('feedback.ask')}</p>
-              <div className="flex justify-center gap-3 mb-4">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    onMouseEnter={() => setHoverRating(star)}
-                    onMouseLeave={() => setHoverRating(0)}
-                    onClick={() => handleStarClick(star)}
-                    className="transform hover:scale-125 transition-all duration-300"
-                  >
-                    <Star
-                      className={`w-14 h-14 ${star <= (hoverRating || rating)
+              <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl p-8 mb-8 border-2 border-yellow-300">
+                <p className="text-center text-gray-700 text-lg mb-6">{t('feedback.ask')}</p>
+                <div className="flex justify-center gap-3 mb-4">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      onMouseEnter={() => setHoverRating(star)}
+                      onMouseLeave={() => setHoverRating(0)}
+                      onClick={() => handleStarClick(star)}
+                      className="transform hover:scale-125 transition-all duration-300"
+                    >
+                      <Star
+                        className={`w-14 h-14 ${star <= (hoverRating || rating)
                           ? 'fill-yellow-400 text-yellow-400'
                           : 'text-gray-300'
-                        } transition-all`}
-                    />
-                  </button>
-                ))}
+                          } transition-all`}
+                      />
+                    </button>
+                  ))}
+                </div>
+                {rating > 0 && (
+                  <p className="text-center text-2xl font-bold text-gray-800 animate-pulse">
+                    {ratingOptions[rating - 1] || ''}
+                  </p>
+                )}
               </div>
+
               {rating > 0 && (
-                <p className="text-center text-2xl font-bold text-gray-800 animate-pulse">
-                  {ratingOptions[rating - 1] || ''}
-                </p>
+                <FeedbackForm
+                  userName={guestName}
+                  rating={rating}
+                  setRating={setRating}
+                  hoverRating={hoverRating}
+                  setHoverRating={setHoverRating}
+                  onSubmitted={handleExploreMore}
+                  onExploreMore={handleExploreMore}
+                />
               )}
             </div>
-
-            {rating > 0 && (
-              <FeedbackForm
-                userName={guestName}
-                rating={rating}
-                setRating={setRating}
-                hoverRating={hoverRating}
-                setHoverRating={setHoverRating}
-                onSubmitted={handleExploreMore}
-                onExploreMore={handleExploreMore}
-              />
-            )}
           </div>
-        </div>
-      )}
+        )
+      }
+
+      {/* About Modal */}
+      {
+        showAboutModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setShowAboutModal(false)}>
+            <div className="bg-slate-900 border border-white/20 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl" onClick={e => e.stopPropagation()}>
+              <div className="sticky top-0 bg-slate-900/95 backdrop-blur p-6 border-b border-white/10 flex justify-between items-center z-10">
+                <h3 className="text-2xl font-bold text-white">{t('sanctuary.about.title')}</h3>
+                <button
+                  onClick={() => setShowAboutModal(false)}
+                  className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                >
+                  <X className="w-6 h-6 text-white" />
+                </button>
+              </div>
+              <div className="p-6 space-y-6">
+                <p className="text-white/90 text-lg leading-relaxed">{t('sanctuary.about.body1')}</p>
+                <p className="text-white/90 text-lg leading-relaxed">{t('sanctuary.about.body2')}</p>
+                <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                  <h4 className="text-xl font-bold text-yellow-300 mb-3">{t('sanctuary.about.highlightsTitle')}</h4>
+                  <ul className="text-white/90 space-y-2 text-base">
+                    {highlightItems.map((item, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-yellow-300 mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
     </>
   );
 };
